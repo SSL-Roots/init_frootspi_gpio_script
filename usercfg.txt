@@ -1,0 +1,11 @@
+# Place "config.txt" changes (dtparam, dtoverlay, disable_overscan, etc.) in
+# this file. Please refer to the README file for a description of the various
+# configuration files on the boot partition.
+# dtoverlay=frootspi-gpio
+
+# キック関連のGPIOをLo出力に設定
+gpio=5,7,24,26=op,dl
+# ドリブラーはアクティブローなのでHi出力に設定
+gpio=13=op,dh
+# SPI0のCE0のみを使用する（CE1を無効化する）
+dtoverlay=spi0-1cs
