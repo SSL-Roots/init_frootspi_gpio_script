@@ -11,7 +11,7 @@ Raspberry PiのGPIOは、起動時に不定だったりHiだったりと様々�
 ```sh
 $ git clone https://github.com/SSL-Roots/init_frootspi_gpio_script
 $ cd init_frootspi_gpio_script
-$ ./copy_usercfg.txt
+$ ./copy_usercfg.bash
 
 # 再起動
 $ sudo reboot
