@@ -3,9 +3,14 @@
 # configuration files on the boot partition.
 # dtoverlay=frootspi-gpio
 
+# SPI0のCANドライバの設定
+dtparam=spi=on
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
+dtoverlay=spi0-hw-cs
+
+# SPI0のCE0のみを使用する（CE1を無効化する）
+dtoverlay=spi0-1cs
 # キック関連のGPIOをLo出力に設定
 gpio=5,7,24,26=op,dl
 # ドリブラーはアクティブローなのでHi出力に設定
 gpio=13=op,dh
-# SPI0のCE0のみを使用する（CE1を無効化する）
-dtoverlay=spi0-1cs
