@@ -32,6 +32,10 @@ $ sudo reboot
 - GPIO13(33pin) : ドリブルモータへ出力をHiに（アクティブLoなので）
 - SPIOのCE0のみを使用する（CE1を無効化する）
   - これを実施しないとGPIO7をLoに設定できません
+- SPI0をCANとして使用する
+  - ラズパイ起動後に`$ dmesg | grep can0`を実行して`mcp251x spi0.0 can0: MCP2515 successfully initialized.`と表示されたらOKです。
+  - 実際に使用する際は、can0をネットワークインタフェースとして使用するための設定が必要です
+  - `$ sudo ip link set can0 up type can bitrate 1000000`
 
 ## 参考資料
 
