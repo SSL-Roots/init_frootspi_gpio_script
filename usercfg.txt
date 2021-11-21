@@ -14,3 +14,6 @@ dtoverlay=spi0-1cs
 gpio=5,7,24,26=op,dl
 # ドリブラーはアクティブローなのでHi出力に設定
 gpio=13=op,dh
+
+# GPIO23をLoでシャットダウン
+dtoverlay=gpio-shutdown,gpio_pin=23
